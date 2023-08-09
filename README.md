@@ -9,8 +9,8 @@ This is a Task Management project that includes the following features:
 # versions
 PHP 8.1.12
 <br>
-Nuxt 3.3.1
+Laravel 10.18.0
 
 # Date
-Project start date : March 18, 2023
+Project start date : August 9, 2023
 
