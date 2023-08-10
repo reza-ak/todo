@@ -11,10 +11,13 @@
                     <div class="card-body">
                         <ul class="list-group p-3">
                             @foreach ($todos as $todo)
-                                <li class="list-group-item">{{$todo->title}}</li>
+                                <li class="list-group-item">{{ $todo->title }}</li>
                             @endforeach
                         </ul>
                     </div>
+                </div>
+                <div class="d-flex justify-content-center my-4">
+                    {{ $todos->links() }}
                 </div>
             </div>
         </div>
