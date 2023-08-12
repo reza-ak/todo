@@ -3,7 +3,10 @@
     <div class="container">
         <div class="row justify-content-center my-5">
             <div class="col-md-6">
-                <h4 class="py-2">تسک ها</h4>
+                <div class="d-flex justify-content-between align-items-center py-3">
+                    <h4 class="mb-0">تسک ها</h4>
+                    <a href="{{route('todos.create')}}" class="btn btn-sm btn-outline-dark">ایجاد تسک جدید</a>
+                </div>
                 <div class="card">
                     <div class="card-header">
                         تسک ها
