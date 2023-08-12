@@ -12,6 +12,7 @@
     @yield('content')
 
     @vite(['resources/js/app.js'])
+    @include('sweetalert::alert') {{-- javascript library of sweetalert2 --}}
 </body>
 
 </html>

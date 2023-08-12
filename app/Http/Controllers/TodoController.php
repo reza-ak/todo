@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Todo;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class TodoController extends Controller
 {
@@ -38,6 +39,9 @@ class TodoController extends Controller
             'title' => $request->title,
             'description' => $request->description,
         ]);
+
+        // sweet alert
+        Alert::success('سپاس', 'تسک جدید با موفقیت ایجاد شد.');
 
         return redirect()->route('todos.index');
     }
