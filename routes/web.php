@@ -21,3 +21,5 @@ Route::get('/', function(){
     return to_route("todos.index");
 });
 
+Route::get('/todos/{todo}/complete', [TodoController::class, 'complete'])->name('todos.complete');
+

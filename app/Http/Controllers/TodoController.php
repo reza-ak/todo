@@ -100,4 +100,19 @@ class TodoController extends Controller
         Alert::success('سپاس', 'تسک مورد نظر با موفقیت حذف شد.');
         return redirect()->route('todos.index');
     }
+
+    // Complete task
+    public function complete(string $id)
+    {
+        $todo = Todo::findOrFail($id);
+
+        $todo->update([
+            'complete' => 1,
+        ]);
+
+        // sweet alert
+        Alert::success('سپاس', 'وضعیت تسک مورد نظر به انجام شده تغییر یافت.');
+
+        return redirect()->route('todos.index');
+    }
 }
