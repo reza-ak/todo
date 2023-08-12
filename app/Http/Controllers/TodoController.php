@@ -92,6 +92,12 @@ class TodoController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $todo = Todo::findOrFail($id);
+
+        $todo->delete();
+
+        // sweet alert
+        Alert::success('سپاس', 'تسک مورد نظر با موفقیت حذف شد.');
+        return redirect()->route('todos.index');
     }
 }

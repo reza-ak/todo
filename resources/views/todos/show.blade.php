@@ -12,7 +12,16 @@
                         {{ $todo->description }}
                     </div>
                     <div class="card-footer p-3">
-                        <a class="btn btn-sm btn-outline-success" href="{{ route('todos.edit', ['todo' => $todo->id]) }}">ویرایش</a>
+                        <a class="btn btn-sm btn-outline-success" href="{{ route('todos.edit', ['todo' => $todo->id]) }}">
+                            ویرایش
+                        </a>
+                        <form method="POST" action="{{ route('todos.destroy', ['todo' => $todo->id]) }}" class="d-inline">
+                            @csrf
+                            @method('delete')
+                            <button class="btn btn-sm btn-outline-danger">
+                                حذف
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>
