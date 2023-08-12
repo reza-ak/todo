@@ -11,6 +11,9 @@
                     <div class="card-body">
                         {{ $todo->description }}
                     </div>
+                    <div class="card-footer p-3">
+                        <a class="btn btn-sm btn-outline-success" href="{{ route('todos.edit', ['todo' => $todo->id]) }}">ویرایش</a>
+                    </div>
                 </div>
             </div>
         </div>

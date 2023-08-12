@@ -60,7 +60,8 @@ class TodoController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $todo = Todo::findOrFail($id);
+        return view('todos.edit', compact('todo'));
     }
 
     /**
@@ -68,7 +69,22 @@ class TodoController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $request->validate([
+            'title' => 'required',
+            'description' => 'required',
+        ]);
+
+        $todo = Todo::findOrFail($id);
+
+        $todo->update([
+            'title' => $request->title,
+            'description' => $request->description,
+        ]);
+
+        // sweet alert
+        Alert::success('سپاس', 'تسک مورد نظر با موفقیت ویرایش شد.');
+
+        return redirect()->route('todos.index');
     }
 
     /**
