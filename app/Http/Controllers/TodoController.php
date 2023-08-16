@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Todo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Redirect;
 use RealRashid\SweetAlert\Facades\Alert;
 
 class TodoController extends Controller
@@ -19,7 +18,8 @@ class TodoController extends Controller
      */
     public function index()
     {
-        $todos = Todo::latest()->paginate(3);
+        $user = Auth::user();
+        $todos = $user->todos()->paginate(3);
         return view('todos.index', compact('todos'));
     }
 
@@ -36,12 +36,15 @@ class TodoController extends Controller
      */
     public function store(Request $request)
     {
+        $userId = Auth::id();
+
         $request->validate([
             'title' => 'required',
             'description' => 'required',
         ]);
 
         Todo::create([
+            'user_id' => $userId,
             'title' => $request->title,
             'description' => $request->description,
         ]);
