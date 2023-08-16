@@ -18,12 +18,6 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('todos.create') }}">ایجاد تسک جدید</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('todos.create') }}">ورود</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('todos.create') }}">ثبت نام</a>
-                        </li>
                     </ul>
                     <form class="d-flex mt-3" role="search">
                         <input class="form-control me-2" type="search" placeholder="جستوجو در تسک ها">
