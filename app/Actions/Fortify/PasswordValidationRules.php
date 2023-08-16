@@ -2,7 +2,9 @@
 
 namespace App\Actions\Fortify;
 
-use Laravel\Fortify\Rules\Password;
+use Illuminate\Validation\Rules\Password;
+
+// use Laravel\Fortify\Rules\Password;
 
 trait PasswordValidationRules
 {
@@ -17,9 +19,17 @@ trait PasswordValidationRules
             'required',
             'string',
             'confirmed',
-            (new Password)->requireNumeric()
-                ->requireUppercase()
-                ->requireSpecialCharacter(),
+            // Require at least one uppercase and one lowercase letter...
+            Password::min(8)->mixedCase(),
+
+            // Require at least one letter...
+            Password::min(8)->letters(),
+
+            // Require at least one number...
+            Password::min(8)->numbers(),
+
+            // Require at least one symbol...
+            Password::min(8)->symbols(),
         ];
     }
 }
