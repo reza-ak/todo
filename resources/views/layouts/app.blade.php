@@ -9,10 +9,12 @@
 </head>
 
 <body>
-    @yield('content')
+    @include('sections.header')
 
+    @yield('content')
     @vite(['resources/js/app.js'])
     @include('sweetalert::alert') {{-- javascript library of sweetalert2 --}}
+    @include('sections.footer')
 </body>
 
 </html>
