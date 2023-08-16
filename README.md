@@ -5,6 +5,9 @@ This is a Task Management project that includes the following features:
 - Read tasks
 - Update a task
 - Delete a task
+- Authentication
+  - Register
+  - Login
 
 # versions
 PHP 8.1.12
