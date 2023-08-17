@@ -18,6 +18,14 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('todos.create') }}">ایجاد تسک جدید</a>
                         </li>
+                        <li class="nav-item">
+                            <form class="row" method="POST" action="{{ route('logout') }}">
+                                @csrf
+                                <button class="nav-link text-end pe-2" type="submit">
+                                    خروج از حساب کاربری
+                                </button>
+                            </form>
+                        </li>
                     </ul>
                     <form class="d-flex mt-3" role="search">
                         <input class="form-control me-2" type="search" placeholder="جستوجو در تسک ها">
