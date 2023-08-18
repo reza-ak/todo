@@ -5,9 +5,10 @@ This is a Task Management project that includes the following features:
 - Read tasks
 - Update a task
 - Delete a task
-- Authentication
+- Authentication (fortify package)
   - Register
   - Login
+  - Reset password (notification)
 
 # versions
 PHP 8.1.12
