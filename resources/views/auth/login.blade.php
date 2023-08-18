@@ -10,6 +10,11 @@
                     <div class="card-header text-center">ورود</div>
 
                     <div class="card-body">
+                        @if (session('status'))
+                            <div class="alert alert-success" role="alert">
+                                بازیابی رمز عبور با موفقیت انجام شد.
+                            </div>
+                        @endif
                         <form class="row" method="POST" action="{{ route('login') }}">
                             @csrf
 
